@@ -1,47 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abaryshe <abaryshe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 18:30:58 by abaryshe          #+#    #+#             */
-/*   Updated: 2024/11/17 18:40:45 by abaryshe         ###   ########.fr       */
+/*   Created: 2024/11/18 10:58:18 by abaryshe          #+#    #+#             */
+/*   Updated: 2025/06/04 21:58:56 by abaryshe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+int	ft_isprint(int c)
 {
-	size_t	len;
-	char	*copy;
-	size_t	i;
-
-	len = ft_strlen(s);
-	copy = (char *)malloc(sizeof(char) * (len + 1));
-	if (!copy)
-		return (0);
-	i = 0;
-	while (s[i])
-	{
-		copy[i] = s[i];
-		i++;
-	}
-	copy[i] = '\0';
-	return (copy);
-}
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*miaou;
-	char	*waf;
-
-	miaou = "MIAOU IS LIFE";
-	waf = ft_strdup(miaou);
-	printf("%s\n", waf);
-	free(waf);
+	if (c > 31 && c < 127)
+		return (c);
 	return (0);
-}*/
+}
