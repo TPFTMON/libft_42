@@ -6,7 +6,7 @@
 /*   By: abaryshe <abaryshe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:59:00 by abaryshe          #+#    #+#             */
-/*   Updated: 2025/06/04 22:46:00 by abaryshe         ###   ########.fr       */
+/*   Updated: 2025/08/10 20:22:47 by abaryshe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <dirent.h>
 # include <errno.h>
 # include <fcntl.h>
+# include <limits.h>
 # include <readline/history.h>
 # include <readline/readline.h>
 # include <signal.h>
@@ -83,6 +84,7 @@ size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 size_t				ft_strlen(const char *s);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strnstr(const char *big, const char *little, size_t n);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strtrim(char const *s1, char const *set);
@@ -111,9 +113,17 @@ void				*ft_calloc(size_t count, size_t size);
 
 // error handling functions.
 // error:
-void				ft_print_error(char *object, char *msg);
-int					ft_print_error_with_code(char *object, char *msg,
+/*
+ * Prints an error message to STDERR.
+ * If msg is NULL,
+ * uses perror to print the system error associated with 'object'.
+ * If object is NULL, prints only msg.
+ * Otherwise, prints "object: msg".
+ */
+void				print_error(char *object, char *msg);
+int					print_error_with_code(char *object, char *msg,
 						int error_code);
+int					ft_dprintf(int fd, const char *format, ...);
 
 // file descriptor functions.
 // fd:
@@ -134,5 +144,6 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+int					ft_mystrtol(const char *str, long *out);
 
 #endif

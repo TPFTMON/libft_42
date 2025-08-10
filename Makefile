@@ -6,7 +6,7 @@
 #    By: abaryshe <abaryshe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 17:58:52 by abaryshe          #+#    #+#              #
-#    Updated: 2025/06/04 23:25:10 by abaryshe         ###   ########.fr        #
+#    Updated: 2025/08/10 20:22:47 by abaryshe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ CHAR_FILES = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 # conversion functions in conversion directory:
 CONV_FILES = ft_atoi.c ft_itoa.c
 # error handling functions in error directory:
-ERROR_FILES = ft_print_error.c ft_print_error_with_code.c
+ERROR_FILES = print_error.c print_error_with_code.c ft_dprintf.c
 # file descriptor functions in fd directory:
 FD_FILES = ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 # get_next_line functions in gnl directory:
@@ -51,7 +51,7 @@ MEM_FILES = ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
 STR_FILES = ft_split.c  ft_strchr.c ft_strcpy.c ft_strdup.c \
 			ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c \
 			ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
-			ft_strrchr.c ft_strtrim.c ft_substr.c
+			ft_strrchr.c ft_strtrim.c ft_substr.c ft_strcmp.c ft_mystrtol.c
 
 CHAR_SRCS = $(addprefix ${CHAR_DIR}/, ${CHAR_FILES})
 CONV_SRCS = $(addprefix ${CONV_DIR}/, ${CONV_FILES})
@@ -88,31 +88,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-# // **************************************************************************** #
-
-# NAME = libft.a
-# CC = cc
-# CMPFLAGS = -Wall -Wextra -Werror
-# HEADER = libft.h
-# SOURCES = ${shell find -name '*.c'}
-# OBJECTS = ${SOURCES:.c=.o}
-# FREM = rm -f
-
-# all: ${NAME}
-
-# ${NAME}: ${OBJECTS}
-# 	ar rcs ${NAME} ${OBJECTS}
-
-# %.o: %.c
-# 	${CC} ${CMPFLAGS} -I ${HEADER} -c $< -o $@
-
-# clean:
-# 	${FREM} ${OBJECTS} ${BONUS_OBJS}
-
-# fclean: clean
-# 	${FREM} ${NAME}
-
-# re: fclean all
-
-# .PHONY: all clean fclean re
