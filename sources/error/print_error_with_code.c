@@ -6,14 +6,27 @@
 /*   By: abaryshe <abaryshe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 09:43:55 by abaryshe          #+#    #+#             */
-/*   Updated: 2025/07/02 00:25:41 by abaryshe         ###   ########.fr       */
+/*   Updated: 2025/09/15 17:39:52 by abaryshe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- * Same as print_error, but also returns an error code.
+/**
+ * @brief Prints to STDERR "object: msg".
+ *
+ * This function prints an error message to STDERR.
+ * If msg is NULL,
+ * uses perror to print the system error associated with 'object'.
+ * If object is NULL, prints only msg.
+ * Otherwise, prints "object: msg".
+ * And returns an error code given.
+ *
+ * @param object The parameter to refer to from where the error comes.
+ * Or to print assosiated perror.
+ * @param msg The error message to be printed.
+ * @param error_code The code to be returned after the print.
+ * @return void
  */
 int	print_error_with_code(char *object, char *msg, int error_code)
 {
