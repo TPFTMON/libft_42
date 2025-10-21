@@ -6,7 +6,7 @@
 /*   By: abaryshe <abaryshe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:59:00 by abaryshe          #+#    #+#             */
-/*   Updated: 2025/08/10 20:22:47 by abaryshe         ###   ########.fr       */
+/*   Updated: 2025/10/21 22:44:56 by abaryshe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,21 +58,18 @@ typedef struct s_list
 
 // <<<<<<<<<<<<<<<<<<<<< FUNCTIONS PROTOTYPES >>>>>>>>>>>>>>>>>>>>>
 
-// get_next_line functions:
-// gnl:
+// get_next_line functions, gnl:
 char				*get_next_line(int fd);
 size_t				ft_strlen_gnl(char *string);
 char				*ft_strchr_gnl(char *string, int occurance);
 char				*ft_strjoin_gnl(char *rest, char *buff);
 char				*ft_free_rest_gnl(char **rest);
 
-// conversion functions:
-// conversion:
+// conversion functions, conversion:
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 
-// string functions.
-// str:
+// string functions, str:
 char				**ft_split(char const *s, char c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strdup(const char *s);
@@ -90,8 +87,7 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 
-// character functions.
-// char:
+// character functions, char:
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
@@ -101,8 +97,7 @@ int					ft_isspace(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 
-// memory functions.
-// mem:
+// memory functions, mem:
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
@@ -111,29 +106,19 @@ void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
 
-// error handling functions.
-// error:
-/*
- * Prints an error message to STDERR.
- * If msg is NULL,
- * uses perror to print the system error associated with 'object'.
- * If object is NULL, prints only msg.
- * Otherwise, prints "object: msg".
- */
+// error handling functions, error:
 void				print_error(char *object, char *msg);
 int					print_error_with_code(char *object, char *msg,
 						int error_code);
 int					ft_dprintf(int fd, const char *format, ...);
 
-// file descriptor functions.
-// fd:
+// file descriptor functions, fd:
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char *s, int fd);
 
-// linked list functions.
-// list:
+// linked list functions, list:
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
